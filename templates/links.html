@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Product Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+      <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+
+<body>
+
+  <div class="table-users">
+   <div class="header">Select Product</div>
+
+   <table cellspacing="0">
+
+         {% for product,plink in alldata.items() %}
+
+                <tr>
+                        <td><a href="{{ url_for('review',product = product) }}">{{ product }}</a></td>
+
+                </tr>
+         {% endfor %}
+   </table>
+</div>
+
+
+
+</body>
+
+</html>
